@@ -1,6 +1,6 @@
-package com.senac.projetopadrao.repository;
+package com.senac.projetopadrao.repositorys;
 
-import com.senac.projetopadrao.model.Usuario;
+import com.senac.projetopadrao.models.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

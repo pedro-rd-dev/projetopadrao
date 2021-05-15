@@ -35,4 +35,20 @@ public class Usuario implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public boolean isEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(boolean estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public String getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(String dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
 }

@@ -22,4 +22,9 @@ public class UsuarioController {
 
         return mv;
     }
+    @GetMapping("/add")
+    public String addUsuario(){
+
+        return "usuarios_add";
+    }
 }

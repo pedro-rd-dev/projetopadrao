@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="auth.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="body-auth">
+
+
+    <p></p>
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6">
+            <div class="text-center">
+                <img src="logo-design2.png" alt="Card image cap" width="200">
+                <p></p>
+            </div>
+            <!-- essa classe foi utilizada para centralizar o conteudo da coluna-->
+            <div class="d-flex justify-content-center">
+                <div class="card card-auth">
+                    <div class="card-body">
+                        <p></p>
+                        <h3 class="card-title text-center texto-auth">Login</h3>
+                        <p></p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+
+                        </form>
+                        <!-- foi usado para poder esticar o botão-->
+                        <div class="d-grid gap-1">
+
+                            <button id="loginButton" onclick="login()" type="submit" class="btn button-auth">
+                                <span id="textoLogando" class="sr-only">Logando...</span>
+                                <span id="textoLogin" class="sr-only">Login</span>
+
+                            </button>
+                        </div>
+                        <hr>
+                        <div class="mb-3">
+                            <div id="alertaEmail" class="text-danger text-center"></div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        Não possui uma conta? <a href="../registro/registro.html" class="texto-auth">Registre-se</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+
+    </div>
+
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/validacao.js" async defer></script>
+    <script src="loginRequests.js"></script>
+    <script src="login.js" async defer></script>
+</body>
+
+</html>

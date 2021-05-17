@@ -1,0 +1,32 @@
+.body-auth {
+    background: rgb(100, 74, 135);
+    background: radial-gradient(circle, rgba(100, 74, 135, 1) 0%, rgba(91, 70, 141, 1) 50%, rgba(84, 66, 145, 1) 100%);
+    margin-top: 30px;
+}
+
+.card-auth {
+    background: #F9F9FB;
+    border-radius: 10px;
+    padding: 10px;
+    width: 27rem;
+}
+
+.button-auth {
+    background: rgb(135, 84, 146);
+    background: linear-gradient(270deg, rgba(135, 84, 146, 1) 0%, rgba(91, 70, 141, 1) 50%, rgba(84, 66, 145, 1) 100%);
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+
+}
+
+
+.texto-auth {
+    color: #664986;
+}
+
+.card-footer {
+    padding: 20px;
+    font-size: 18px;
+}
+

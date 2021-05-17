@@ -1,22 +1,25 @@
 package com.senac.projetopadrao.controllers;
 
+import com.senac.projetopadrao.repositorys.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-//@Controller mostra para o Spring que esta classe é um controlador
-//e que ele também retorna uma página
+
 @Controller
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    @GetMapping("/listar")
-    public String listarUsuarios(){
+    @Autowired
+    UsuarioRepository usuarioRepository;
 
-        System.out.println("USUARIOS");
+    @GetMapping("/")
+    public ModelAndView listarUsuarios(){
+        ModelAndView mv = new ModelAndView("usuarios");
+        mv.addObject("usuarios", usuarioRepository.findAll());
 
-        return "usuarios";
+        return mv;
     }
-
-
 }

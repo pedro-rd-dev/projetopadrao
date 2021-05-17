@@ -5,12 +5,25 @@ import com.senac.projetopadrao.repositorys.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioControllerRest {
 
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    @GetMapping("/listar")
+    public ArrayList<Usuario> listar(){
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
+        usuarios = (ArrayList<Usuario>) usuarioRepository.findAll();
+
+        return usuarios;
+    }
 
     @PostMapping("/add")
     public String addUsuario(){

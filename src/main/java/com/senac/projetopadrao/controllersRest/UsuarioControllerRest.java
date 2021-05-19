@@ -25,7 +25,7 @@ public class UsuarioControllerRest {
         return usuarios;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addRest")
     public String addUsuario(){
 
         Usuario usuario = new Usuario();

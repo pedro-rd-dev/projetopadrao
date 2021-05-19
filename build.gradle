@@ -20,7 +20,7 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.hibernate.validator:hibernate-validator:6.1.2.Final'
-
+	testImplementation 'org.awaitility:awaitility:4.1.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

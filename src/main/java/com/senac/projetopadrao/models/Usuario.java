@@ -1,9 +1,12 @@
 package com.senac.projetopadrao.models;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 //decorar
@@ -14,10 +17,13 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @NotEmpty(message = "Obrigatorio escrever um nome")
     private String nome;
 
     private boolean estadoCivil;
 
+    @NotNull
     private String dataDeNascimento;
 
     public Long getId() {

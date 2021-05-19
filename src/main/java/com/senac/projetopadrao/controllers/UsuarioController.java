@@ -5,6 +5,7 @@ import com.senac.projetopadrao.repositorys.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,7 +23,7 @@ public class UsuarioController {
     public ModelAndView listarUsuarios(){
         ModelAndView mv = new ModelAndView("usuario");
 
-        ArrayList<Usuario> usuarios = new ArrayList<>();
+        ArrayList<Usuario> usuarios;
 
         usuarios = (ArrayList<Usuario>) usuarioRepository.findAll();
 
@@ -30,26 +31,5 @@ public class UsuarioController {
 
         return mv;
     }
-
-
-/*
-    @Autowired
-    UsuarioRepository usuarioRepository;
-    */
-
-/*
-    @GetMapping("/")
-    public ModelAndView listarUsuarios(){
-        ModelAndView mv = new ModelAndView("usuarios");
-        mv.addObject("usuarios", usuarioRepository.findAll());
-
-        return mv;
-    }
-    @GetMapping("/add")
-    public String addUsuario(){
-
-        return "usuarios_add";
-    }
-    */
 
 }

@@ -26,11 +26,8 @@ public class UsuarioController {
     @GetMapping("/")
     public ModelAndView listarUsuarios(){
         ModelAndView mv = new ModelAndView("usuarios");
-
         ArrayList<Usuario> usuarios;
-
         usuarios = (ArrayList<Usuario>) usuarioRepository.findAll();
-
         mv.addObject("usuarios",usuarios);
 
         return mv;
@@ -38,6 +35,7 @@ public class UsuarioController {
 
     @GetMapping("/add")
     public String addUsuarioPage(Usuario usuario){
+
         return "usuarios_add";
     }
 

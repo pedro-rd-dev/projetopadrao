@@ -13,7 +13,7 @@ public class ScheduledTasks {
 
     @Autowired
     ClimaRepository climaRepository;
-
+/*
     @Scheduled(fixedRate = 5000)
     public void checkClima() {
 
@@ -43,4 +43,6 @@ public class ScheduledTasks {
             }
         }
     }
+
+ */
 }

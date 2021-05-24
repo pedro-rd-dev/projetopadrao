@@ -27,6 +27,8 @@ public class Satelite implements Serializable {
     private double solar_lon;
     private String units;
 
+
+
     public String getName() {
         return name;
     }

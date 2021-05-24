@@ -27,6 +27,7 @@ public class MonitorarSatelite {
 
         sateliteRepository.save(satelite);
 
+
     }
 
 }

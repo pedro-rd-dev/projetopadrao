@@ -23,12 +23,15 @@ public class UsuarioController {
     @Autowired
     UsuarioRepository usuarioRepository;
 
+
+
     @GetMapping("/")
     public ModelAndView listarUsuarios(){
+
         ModelAndView mv = new ModelAndView("usuarios");
         ArrayList<Usuario> usuarios;
         usuarios = (ArrayList<Usuario>) usuarioRepository.findAll();
-        mv.addObject("usuarios",usuarios);
+        mv.addObject("usuariosLista",usuarios);
 
         return mv;
     }

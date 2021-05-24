@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>Usuários</title>
+    <title>Satélites</title>
 </head>
 <body>
 
@@ -16,7 +16,7 @@
     <div class="col-sm">
         <div class="row">
             <div class="col">
-                <h1 class="text-left">Usuarios</h1>
+                <h1 class="text-left">satelites</h1>
             </div>
             <div class="col text-end align-middle" style="margin-top: 10px; margin-right: 2px">
                 <a th:href="add" type="button" class="btn btn-primary">ADD</a>
@@ -28,16 +28,16 @@
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Estado Civil</th>
-                <th scope="col">Nascimento</th>
+                <th scope="col">latitude</th>
+                <th scope="col">longitude</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="usuario: ${usuariosLista}">
-                <th scope="row" th:text="${usuario.id}"></th>
-                <td th:text="${usuario.nome}"></td>
-                <td th:text="${usuario.estadoCivil}"></td>
-                <td th:text="${usuario.dataDeNascimento}"></td>
+            <tr th:each="satelite: ${satelitesLista}">
+                <th scope="row" th:text="${satelite.id}"></th>
+                <td th:text="${satelite.name}"></td>
+                <td th:text="${satelite.latitude}"></td>
+                <td th:text="${satelite.longitude}"></td>
             </tr>
             </tbody>
         </table>

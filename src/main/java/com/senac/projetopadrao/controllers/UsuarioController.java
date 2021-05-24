@@ -2,18 +2,17 @@ package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Usuario;
 import com.senac.projetopadrao.repositorys.UsuarioRepository;
+import org.graalvm.compiler.loop.DefaultLoopPolicies_OptionDescriptors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 
 @Controller
@@ -50,4 +49,32 @@ public class UsuarioController {
         return "redirect:/usuarios/";
     }
 
+    @GetMapping("/{id}")
+    public ModelAndView editarUsuarioPage(@PathVariable(value = "id") Long id){
+
+        Usuario usuario = usuarioRepository.findUsuarioById(id);
+
+        ModelAndView modelAndView = new ModelAndView("usuarios_edit");
+        modelAndView.addObject("usuario",usuario);
+
+
+        return modelAndView;
+    }
+    @PostMapping("/edit")
+    public String editarUsuario(Usuario usuario){
+
+        usuarioRepository.save(usuario);
+
+
+        return "redirect:/usuarios/";
+    }
+    @GetMapping("/deletar/{id}")
+    public String deletar(@PathVariable(value = "id") Long id){
+
+        Usuario usuario = usuarioRepository.findUsuarioById(id);
+
+        usuarioRepository.delete(usuario);
+
+        return "redirect:/usuarios/";
+    }
 }

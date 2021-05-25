@@ -2,17 +2,12 @@ package com.senac.projetopadrao.controllers;
 
 import com.senac.projetopadrao.models.Usuario;
 import com.senac.projetopadrao.repositorys.UsuarioRepository;
-import org.graalvm.compiler.loop.DefaultLoopPolicies_OptionDescriptors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.ArrayList;
-import java.util.Optional;
 
 
 @Controller
@@ -21,8 +16,6 @@ public class UsuarioController {
 
     @Autowired
     UsuarioRepository usuarioRepository;
-
-
 
     @GetMapping("/")
     public ModelAndView listarUsuarios(){
@@ -37,7 +30,6 @@ public class UsuarioController {
 
     @GetMapping("/add")
     public String addUsuarioPage(Usuario usuario){
-
         return "usuarios_add";
     }
 
@@ -45,7 +37,6 @@ public class UsuarioController {
     public String addUsuario(@Validated Usuario usuario){
 
         usuarioRepository.save(usuario);
-
         return "redirect:/usuarios/";
     }
 
@@ -57,17 +48,18 @@ public class UsuarioController {
         ModelAndView modelAndView = new ModelAndView("usuarios_edit");
         modelAndView.addObject("usuario",usuario);
 
-
         return modelAndView;
     }
-    @PostMapping("/edit")
-    public String editarUsuario(Usuario usuario){
+
+    @PostMapping("/{id}")
+    public String editarUsuario(@PathVariable(value = "id") Long id, Usuario usuario){
+
+        usuario.setId(id);
 
         usuarioRepository.save(usuario);
-
-
         return "redirect:/usuarios/";
     }
+    /*
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable(value = "id") Long id){
 
@@ -77,4 +69,6 @@ public class UsuarioController {
 
         return "redirect:/usuarios/";
     }
+
+*/
 }

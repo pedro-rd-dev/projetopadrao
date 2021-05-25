@@ -13,7 +13,7 @@
 <div class="container" align="center">
     <h1 class="text-center">Adicionar Usuário</h1>
 
-    <form style="width:400px" th:action="@{/usuarios/edit}" th:object="${usuario}" method="post">
+    <form style="width:400px" th:action="${usuario.id}" th:object="${usuario}" method="post">
         <div class="mb-3">
             <label for="nomeId" class="form-label" align="right">Nome asdasd</label>
             <input type="text" class="form-control" id="nomeId" th:field="*{nome}" th:value="${usuario.nome}">

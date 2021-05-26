@@ -59,7 +59,7 @@ public class UsuarioController {
         usuarioRepository.save(usuario);
         return "redirect:/usuarios/";
     }
-    /*
+
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable(value = "id") Long id){
 
@@ -70,5 +70,5 @@ public class UsuarioController {
         return "redirect:/usuarios/";
     }
 
-*/
+
 }

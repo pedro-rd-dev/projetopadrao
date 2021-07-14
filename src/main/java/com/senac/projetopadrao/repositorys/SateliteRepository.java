@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SateliteRepository extends JpaRepository<Satelite, Long> {
 
+    Satelite findSateliteByIdSatelite(int id);
 }
